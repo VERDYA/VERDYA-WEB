@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { COMPANY_CONFIG } from '../../config/constants';
 
 export default function ContactSection() {
@@ -10,6 +11,8 @@ export default function ContactSection() {
     company: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -18,12 +21,25 @@ export default function ContactSection() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica para enviar o formulário
+    setIsSubmitting(true);
+
+    // Simula envio (substitua por lógica real de API)
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
     console.log('Formulário enviado:', formData);
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+    
+    setIsSubmitting(false);
+    setShowSuccess(true);
+    
+    // Reset form
     setFormData({ name: '', email: '', company: '', message: '' });
+
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 5000);
   };
 
   return (
@@ -44,8 +60,76 @@ export default function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Formulário de Contato */}
-          <div className="card-bg p-8 rounded-2xl border border-gray-700" data-aos="fade-right" data-aos-duration="1000">
+          <div className="card-bg p-8 rounded-2xl border border-gray-700 relative overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
             <h3 className="text-2xl font-bold mb-6">Entre em Contato</h3>
+            
+            {/* Success Message Overlay */}
+            <AnimatePresence>
+              {showSuccess && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="absolute inset-0 bg-gray-900/95 backdrop-blur-sm z-10 flex flex-col items-center justify-center p-8 rounded-2xl"
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 15 }}
+                    className="bg-lime-500 rounded-full w-20 h-20 flex items-center justify-center mb-6"
+                  >
+                    <motion.svg
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
+                      className="w-12 h-12 text-gray-900"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <motion.path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="3"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </motion.svg>
+                  </motion.div>
+                  
+                  <motion.h4
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6 }}
+                    className="text-2xl font-bold text-white mb-3"
+                  >
+                    Mensagem Enviada!
+                  </motion.h4>
+                  
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.7 }}
+                    className="text-gray-300 text-center max-w-md"
+                  >
+                    Obrigado pelo contato! Entraremos em contato em breve para agendar sua consultoria.
+                  </motion.p>
+
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.9 }}
+                    className="mt-6 flex items-center gap-2 text-sm text-gray-400"
+                  >
+                    <svg className="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    Fechando automaticamente...
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
@@ -113,12 +197,40 @@ export default function ContactSection() {
                 />
               </div>
 
-              <button
+              <motion.button
                 type="submit"
-                className="w-full bg-lime-500 text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-lime-600 transition-colors duration-300 transform hover:scale-105"
+                disabled={isSubmitting}
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                className="w-full bg-lime-500 text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-lime-600 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
               >
-                Enviar Mensagem
-              </button>
+                <AnimatePresence mode="wait">
+                  {isSubmitting ? (
+                    <motion.span
+                      key="loading"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Enviando...
+                    </motion.span>
+                  ) : (
+                    <motion.span
+                      key="send"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                    >
+                      Enviar Mensagem
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </motion.button>
             </form>
           </div>
 
@@ -159,7 +271,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-white">E-mail</h4>
-                  <p className="text-gray-400">verdya.co@gmail.com</p>
+                  <p className="text-gray-400">contato@verdya.com.br</p>
                 </div>
               </div>
               <p className="text-sm text-gray-400">
