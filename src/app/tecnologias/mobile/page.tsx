@@ -62,6 +62,167 @@ export default function MobilePage() {
           </div>
         </section>
 
+        {/* Visual Showcase Section with Image */}
+        <section className="py-20 bg-gray-900 overflow-hidden">
+          <div className="container mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Content */}
+              <div data-aos="fade-right">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                  Apps que Encantam Usuários
+                </h2>
+                <p className="text-xl text-gray-300 mb-8">
+                  Criamos experiências móveis que combinam design elegante, 
+                  performance excepcional e funcionalidades que realmente importam para seu negócio.
+                </p>
+                
+                <div className="space-y-6">
+                  {[
+                    {
+                      icon: (
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      ),
+                      title: "Performance Excepcional",
+                      description: "Apps rápidos e responsivos, mesmo em conexões lentas"
+                    },
+                    {
+                      icon: (
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                        </svg>
+                      ),
+                      title: "Design Intuitivo",
+                      description: "Interface moderna que seus usuários vão adorar"
+                    },
+                    {
+                      icon: (
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                      ),
+                      title: "Segurança Garantida",
+                      description: "Proteção de dados e privacidade em primeiro lugar"
+                    }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-4 bg-gradient-to-r from-gray-800/50 to-gray-900/50 p-4 rounded-xl border border-gray-700 hover:border-green-500/50 transition-all duration-300">
+                      <div className="bg-gradient-to-r from-green-500 to-emerald-500 p-3 rounded-lg shrink-0">
+                        {item.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-white mb-1">{item.title}</h3>
+                        <p className="text-gray-400 text-sm">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Side - Phone Mockup Image */}
+              <div className="relative" data-aos="fade-left">
+                <div className="relative z-10">
+                  {/* Phone Frame */}
+                  <div className="relative mx-auto w-[280px] h-[570px] bg-gray-900 rounded-[3rem] border-8 border-gray-800 shadow-2xl">
+                    {/* Notch */}
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-7 bg-gray-900 rounded-b-3xl z-20"></div>
+                    
+                    {/* Screen Content */}
+                    <div className="absolute inset-2 bg-gradient-to-br from-green-500 via-emerald-500 to-teal-500 rounded-[2.5rem] overflow-hidden">
+                      {/* Status Bar */}
+                      <div className="h-12 bg-gradient-to-r from-green-600/30 to-emerald-600/30 backdrop-blur-sm flex items-center justify-between px-6 text-white text-xs">
+                        <span>9:41</span>
+                        <div className="flex gap-1 items-center">
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                          </svg>
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M17.778 8.222c-4.296-4.296-11.26-4.296-15.556 0A1 1 0 01.808 6.808c5.076-5.077 13.308-5.077 18.384 0a1 1 0 01-1.414 1.414zM14.95 11.05a7 7 0 00-9.9 0 1 1 0 01-1.414-1.414 9 9 0 0112.728 0 1 1 0 01-1.414 1.414zM12.12 13.88a3 3 0 00-4.242 0 1 1 0 01-1.415-1.415 5 5 0 017.072 0 1 1 0 01-1.415 1.415zM9 16a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
+                          </svg>
+                          <span className="text-xs">100%</span>
+                        </div>
+                      </div>
+                      
+                      {/* App Content */}
+                      <div className="p-6 space-y-4">
+                        {/* Header */}
+                        <div className="bg-white/20 backdrop-blur-md rounded-2xl p-4 border border-white/30">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                              <svg className="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z" />
+                              </svg>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="text-white font-bold">Verdya App</h3>
+                              <p className="text-white/80 text-xs">Bem-vindo de volta!</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Cards */}
+                        <div className="grid grid-cols-2 gap-3">
+                          {[
+                            { label: "Analytics", icon: "📊" },
+                            { label: "Mensagens", icon: "💬" },
+                            { label: "Projetos", icon: "📁" },
+                            { label: "Equipe", icon: "👥" }
+                          ].map((card, idx) => (
+                            <div key={idx} className="bg-white/20 backdrop-blur-md rounded-xl p-3 border border-white/30 text-center">
+                              <div className="text-2xl mb-1">{card.icon}</div>
+                              <p className="text-white text-xs font-semibold">{card.label}</p>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Stats Card */}
+                        <div className="bg-white/20 backdrop-blur-md rounded-2xl p-4 border border-white/30">
+                          <p className="text-white/80 text-xs mb-2">Performance Hoje</p>
+                          <div className="flex items-end gap-1 h-16">
+                            {[40, 70, 50, 90, 60, 80, 95].map((height, idx) => (
+                              <div 
+                                key={idx} 
+                                className="flex-1 bg-white rounded-t"
+                                style={{ height: `${height}%` }}
+                              ></div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Bottom Navigation */}
+                        <div className="absolute bottom-4 left-4 right-4 bg-white/20 backdrop-blur-md rounded-2xl p-3 border border-white/30">
+                          <div className="flex justify-around items-center">
+                            {[
+                              <svg key="home" className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>,
+                              <svg key="search" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>,
+                              <svg key="bell" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>,
+                              <svg key="user" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                            ].map((icon, idx) => (
+                              <div key={idx} className="text-white p-2 rounded-xl hover:bg-white/10 transition-colors">
+                                {icon}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Power Button */}
+                    <div className="absolute -right-1 top-28 w-1 h-12 bg-gray-700 rounded-l"></div>
+                    {/* Volume Buttons */}
+                    <div className="absolute -left-1 top-24 w-1 h-8 bg-gray-700 rounded-r"></div>
+                    <div className="absolute -left-1 top-36 w-1 h-8 bg-gray-700 rounded-r"></div>
+                  </div>
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Services Section */}
         <section className="py-20 bg-gray-800">
           <div className="container mx-auto px-6">

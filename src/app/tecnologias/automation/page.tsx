@@ -130,6 +130,136 @@ export default function AutomationPage() {
           </div>
         </section>
 
+        {/* Dashboard Mockup Section */}
+        <section className="py-20 bg-gray-800 overflow-hidden">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12" data-aos="fade-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Painel de Controle em Tempo Real
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Monitore todos os processos automatizados com visibilidade completa
+              </p>
+            </div>
+
+            {/* Dashboard Interface */}
+            <div className="relative max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+              {/* Browser Window Frame */}
+              <div className="bg-gray-900 rounded-t-2xl border border-gray-700 p-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  <div className="flex-1 bg-gray-800 rounded px-3 py-1 ml-4">
+                    <span className="text-xs text-gray-500">dashboard.verdya.com.br</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Dashboard Content */}
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 border-x border-b border-gray-700 rounded-b-2xl p-6">
+                
+                {/* Top Stats */}
+                <div className="grid grid-cols-4 gap-4 mb-6">
+                  <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
+                    <div className="text-sm text-gray-400 mb-1">Processos Ativos</div>
+                    <div className="text-2xl font-bold text-white">127</div>
+                    <div className="text-xs text-green-400 mt-1">+12% hoje</div>
+                  </div>
+                  <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
+                    <div className="text-sm text-gray-400 mb-1">Taxa de Sucesso</div>
+                    <div className="text-2xl font-bold text-white">99.8%</div>
+                    <div className="text-xs text-green-400 mt-1">+0.3%</div>
+                  </div>
+                  <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
+                    <div className="text-sm text-gray-400 mb-1">Tempo Economizado</div>
+                    <div className="text-2xl font-bold text-white">2.4k</div>
+                    <div className="text-xs text-gray-400 mt-1">horas/mês</div>
+                  </div>
+                  <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
+                    <div className="text-sm text-gray-400 mb-1">Custo Reduzido</div>
+                    <div className="text-2xl font-bold text-white">R$ 180k</div>
+                    <div className="text-xs text-green-400 mt-1">-24% vs manual</div>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Activity Chart */}
+                  <div className="bg-gray-800/50 rounded-xl p-5 border border-gray-700">
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="font-semibold text-white">Atividade dos Bots</h3>
+                      <span className="text-xs text-gray-400">Últimas 24h</span>
+                    </div>
+                    <div className="flex items-end justify-between h-32 gap-2">
+                      {[65, 78, 82, 70, 85, 92, 88, 95, 90, 87, 93, 98].map((height, i) => (
+                        <div key={i} className="flex-1 flex flex-col justify-end">
+                          <div 
+                            className="bg-gradient-to-t from-indigo-600 to-purple-500 rounded-t transition-all hover:from-indigo-500 hover:to-purple-400"
+                            style={{ height: `${height}%` }}
+                          ></div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex justify-between mt-2 text-xs text-gray-500">
+                      <span>00h</span>
+                      <span>12h</span>
+                      <span>23h</span>
+                    </div>
+                  </div>
+
+                  {/* Process Status */}
+                  <div className="bg-gray-800/50 rounded-xl p-5 border border-gray-700">
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="font-semibold text-white">Status dos Processos</h3>
+                      <span className="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">Todos Operacionais</span>
+                    </div>
+                    <div className="space-y-3">
+                      {[
+                        { name: "Conciliação Bancária", status: "Executando", progress: 78 },
+                        { name: "Processamento de NF", status: "Concluído", progress: 100 },
+                        { name: "Validação de Dados", status: "Executando", progress: 45 },
+                        { name: "Geração de Relatórios", status: "Aguardando", progress: 0 }
+                      ].map((process, i) => (
+                        <div key={i}>
+                          <div className="flex justify-between items-center mb-1">
+                            <span className="text-sm text-gray-300">{process.name}</span>
+                            <span className="text-xs text-gray-500">{process.status}</span>
+                          </div>
+                          <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <div 
+                              className={`h-full ${process.progress === 100 ? 'bg-green-500' : 'bg-indigo-500'} transition-all`}
+                              style={{ width: `${process.progress}%` }}
+                            ></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Recent Activity Log */}
+                <div className="mt-6 bg-gray-800/50 rounded-xl p-5 border border-gray-700">
+                  <h3 className="font-semibold text-white mb-4">Atividade Recente</h3>
+                  <div className="space-y-2 text-sm">
+                    {[
+                      { time: "14:32", action: "Bot-Finance-01 processou 340 faturas", status: "success" },
+                      { time: "14:28", action: "Bot-HR-03 completou onboarding de 5 funcionários", status: "success" },
+                      { time: "14:15", action: "Bot-Support-02 respondeu 128 tickets", status: "success" },
+                      { time: "14:02", action: "Bot-Data-05 validou 2.4k registros", status: "success" }
+                    ].map((log, i) => (
+                      <div key={i} className="flex items-center gap-3 p-2 hover:bg-gray-700/30 rounded transition-colors">
+                        <span className="text-gray-500 font-mono text-xs">{log.time}</span>
+                        <div className={`w-2 h-2 rounded-full ${log.status === 'success' ? 'bg-green-500' : 'bg-yellow-500'}`}></div>
+                        <span className="text-gray-300">{log.action}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* RPA Solutions Section */}
         <section className="py-20 bg-gray-900">
           <div className="container mx-auto px-6">

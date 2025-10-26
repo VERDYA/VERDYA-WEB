@@ -230,6 +230,241 @@ export default function SolucoesIAPage() {
           </div>
         </section>
 
+        {/* AI in Action Visual Section */}
+        <section className="py-20 bg-gray-900 overflow-hidden">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12" data-aos="fade-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                IA Generativa em Ação
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Veja como a inteligência artificial processa e gera respostas inteligentes
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+              
+              {/* Left - Chat Interface Mockup */}
+              <div className="relative" data-aos="fade-right">
+                <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-2xl p-6 border border-purple-500/30 shadow-2xl">
+                  
+                  {/* Chat Header */}
+                  <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-t-xl p-4 -m-6 mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white">Assistente IA VERDYA</h4>
+                        <div className="flex items-center gap-1 text-xs text-purple-100">
+                          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                          <span>Online • Processando com GPT-4</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Chat Messages */}
+                  <div className="space-y-4 h-96 overflow-y-auto pr-2">
+                    
+                    {/* User Message */}
+                    <div className="flex justify-end">
+                      <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[80%]">
+                        <p className="text-sm text-white">Como posso automatizar o processo de atendimento ao cliente da minha empresa?</p>
+                        <span className="text-xs text-purple-200 mt-1 block">14:32</span>
+                      </div>
+                    </div>
+
+                    {/* AI Response */}
+                    <div className="flex gap-2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shrink-0">
+                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
+                        </svg>
+                      </div>
+                      <div className="bg-gray-800 rounded-2xl rounded-tl-sm px-4 py-3 max-w-[80%] border border-gray-700">
+                        <p className="text-sm text-gray-100 leading-relaxed mb-2">
+                          Excelente pergunta! Posso sugerir uma solução completa de automação com IA:
+                        </p>
+                        <ul className="space-y-2 text-sm text-gray-300">
+                          <li className="flex items-start gap-2">
+                            <span className="text-purple-400 mt-1">•</span>
+                            <span><strong className="text-purple-400">Chatbot Inteligente:</strong> Responde 90% das dúvidas automaticamente usando NLP avançado</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-pink-400 mt-1">•</span>
+                            <span><strong className="text-pink-400">Classificação Automática:</strong> Prioriza tickets por urgência e direciona ao departamento correto</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-purple-400 mt-1">•</span>
+                            <span><strong className="text-purple-400">Análise de Sentimento:</strong> Identifica clientes insatisfeitos para ação imediata</span>
+                          </li>
+                        </ul>
+                        <div className="mt-3 flex items-center gap-2 text-xs text-gray-500">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Gerado por GPT-4 • 14:33</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* User Follow-up */}
+                    <div className="flex justify-end">
+                      <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[80%]">
+                        <p className="text-sm text-white">Quanto tempo leva para implementar?</p>
+                        <span className="text-xs text-purple-200 mt-1 block">14:34</span>
+                      </div>
+                    </div>
+
+                    {/* AI Response with typing indicator */}
+                    <div className="flex gap-2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shrink-0">
+                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
+                        </svg>
+                      </div>
+                      <div className="bg-gray-800 rounded-2xl rounded-tl-sm px-4 py-3 border border-gray-700">
+                        <div className="flex items-center gap-2">
+                          <div className="flex gap-1">
+                            <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{animationDelay: '0s'}}></div>
+                            <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                            <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{animationDelay: '0.4s'}}></div>
+                          </div>
+                          <span className="text-xs text-gray-500">Processando resposta...</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  {/* Input Area */}
+                  <div className="mt-4 flex gap-2">
+                    <div className="flex-1 bg-gray-800 rounded-xl px-4 py-3 border border-gray-700 flex items-center">
+                      <input 
+                        type="text" 
+                        placeholder="Digite sua pergunta..." 
+                        className="bg-transparent text-sm text-gray-400 w-full outline-none"
+                        disabled
+                      />
+                    </div>
+                    <button className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl px-4 py-3 hover:from-purple-600 hover:to-pink-600 transition-all">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Floating Stats */}
+                <div className="absolute -top-4 -right-4 bg-purple-500/10 backdrop-blur-sm border border-purple-500/30 rounded-lg px-3 py-2">
+                  <div className="flex items-center gap-2">
+                    <svg className="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span className="text-xs font-semibold text-purple-400">Resposta em 2s</span>
+                  </div>
+                </div>
+                <div className="absolute -bottom-4 -left-4 bg-pink-500/10 backdrop-blur-sm border border-pink-500/30 rounded-lg px-3 py-2">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-xs font-semibold text-pink-400">99.2% Precisão</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right - Features */}
+              <div data-aos="fade-left">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6">
+                  Potencialize seu Negócio com IA Conversacional
+                </h3>
+                <p className="text-gray-300 mb-8 text-lg">
+                  Nossa solução de IA Generativa utiliza os modelos mais avançados do mercado 
+                  para criar experiências conversacionais naturais e eficientes.
+                </p>
+
+                <div className="space-y-4">
+                  {[
+                    {
+                      title: "Modelos de Linguagem Avançados",
+                      description: "GPT-4, Claude 3 e Gemini Pro para respostas precisas e contextuais",
+                      icon: (
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
+                        </svg>
+                      )
+                    },
+                    {
+                      title: "Aprendizado Contínuo",
+                      description: "A IA aprende com cada interação, melhorando constantemente suas respostas",
+                      icon: (
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                      )
+                    },
+                    {
+                      title: "Integração Total",
+                      description: "Conecta-se aos seus sistemas CRM, ERP e bases de conhecimento existentes",
+                      icon: (
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      )
+                    },
+                    {
+                      title: "Multicanal",
+                      description: "Funciona em site, WhatsApp, Telegram, Slack e outras plataformas",
+                      icon: (
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                      )
+                    },
+                    {
+                      title: "Análise de Sentimento",
+                      description: "Detecta emoções e ajusta o tom de resposta automaticamente",
+                      icon: (
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      )
+                    }
+                  ].map((feature, idx) => (
+                    <div key={idx} className="flex gap-4 items-start bg-gray-800/30 p-4 rounded-xl border border-gray-700 hover:border-purple-500/50 transition-all">
+                      <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded-lg shrink-0 text-white">
+                        {feature.icon}
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">{feature.title}</h4>
+                        <p className="text-sm text-gray-400">{feature.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Metrics */}
+                <div className="mt-8 grid grid-cols-3 gap-4">
+                  <div className="bg-purple-500/10 rounded-lg p-3 border border-purple-500/30 text-center">
+                    <div className="text-2xl font-bold text-purple-400">90%</div>
+                    <div className="text-xs text-gray-400 mt-1">Automação</div>
+                  </div>
+                  <div className="bg-pink-500/10 rounded-lg p-3 border border-pink-500/30 text-center">
+                    <div className="text-2xl font-bold text-pink-400">2s</div>
+                    <div className="text-xs text-gray-400 mt-1">Tempo Médio</div>
+                  </div>
+                  <div className="bg-purple-500/10 rounded-lg p-3 border border-purple-500/30 text-center">
+                    <div className="text-2xl font-bold text-purple-400">24/7</div>
+                    <div className="text-xs text-gray-400 mt-1">Disponível</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* AI Benefits Section */}
         <section className="py-20 bg-gray-900">
           <div className="container mx-auto px-6">
