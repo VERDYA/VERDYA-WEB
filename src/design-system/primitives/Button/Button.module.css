@@ -1,0 +1,163 @@
+/**
+ * Button Component Styles
+ * Estilo Webflow
+ */
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-normal) var(--easing-easeOut);
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Sizes */
+.sm {
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-sm);
+}
+
+.md {
+  padding: 0.75rem 1.5rem;
+  font-size: var(--font-size-base);
+}
+
+.lg {
+  padding: 1rem 2rem;
+  font-size: var(--font-size-lg);
+}
+
+/* Variants */
+.solid {
+  color: white;
+}
+
+.outline {
+  background-color: transparent;
+}
+
+.ghost {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.link {
+  background-color: transparent;
+  border-color: transparent;
+  text-decoration: underline;
+  padding: 0;
+}
+
+/* Color Schemes - Solid */
+.solid.primary {
+  background-color: var(--color-primary-600);
+}
+
+.solid.primary:hover:not(.disabled) {
+  background-color: var(--color-primary-700);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+.solid.secondary {
+  background-color: var(--color-neutral-600);
+}
+
+.solid.secondary:hover:not(.disabled) {
+  background-color: var(--color-neutral-700);
+}
+
+.solid.accent {
+  background-color: var(--color-accent-500);
+}
+
+.solid.accent:hover:not(.disabled) {
+  background-color: var(--color-accent-600);
+}
+
+.solid.success {
+  background-color: var(--color-success-500);
+}
+
+.solid.error {
+  background-color: var(--color-error-500);
+}
+
+/* Color Schemes - Outline */
+.outline.primary {
+  border-color: var(--color-primary-600);
+  color: var(--color-primary-600);
+}
+
+.outline.primary:hover:not(.disabled) {
+  background-color: var(--color-primary-600);
+  color: white;
+}
+
+.outline.secondary {
+  border-color: var(--color-neutral-600);
+  color: var(--color-neutral-600);
+}
+
+.outline.secondary:hover:not(.disabled) {
+  background-color: var(--color-neutral-600);
+  color: white;
+}
+
+/* Color Schemes - Ghost */
+.ghost.primary {
+  color: var(--color-primary-600);
+}
+
+.ghost.primary:hover:not(.disabled) {
+  background-color: var(--color-primary-50);
+}
+
+/* Full Width */
+.fullWidth {
+  width: 100%;
+}
+
+/* Disabled */
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Icons */
+.leftIcon,
+.rightIcon {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Loading Spinner */
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Text */
+.text {
+  display: inline-flex;
+  align-items: center;
+}

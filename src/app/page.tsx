@@ -1,3 +1,8 @@
+/**
+ * Home Page
+ * Versão original mantida (Webflow disponível para migração gradual)
+ */
+
 'use client';
 
 import Script from 'next/script';
@@ -11,6 +16,10 @@ import DNASection from '../components/sections/DNASection';
 import ContactSection from '../components/sections/ContactSection';
 import Footer from '../components/layout/Footer';
 import { HomeStructuredData } from '../components/SEO/StructuredData';
+
+// Para usar o novo sistema Webflow, descomente as linhas abaixo:
+// import { PageBuilder } from '../webflow/PageBuilder';
+// import { homePageContent } from '../content/pages/home';
 
 export default function Home() {
   // Inicialização da aplicação
@@ -30,12 +39,15 @@ export default function Home() {
       <Header />
       
       <main>
-        {/* Componentes de Seção */}
+        {/* Componentes de Seção - Versão Original */}
         <HeroSection />
         <AboutSection />
         <TechCardsSection />
         <DNASection />
         <ContactSection />
+        
+        {/* Para usar o novo sistema Webflow, substitua as seções acima por: */}
+        {/* <PageBuilder sections={homePageContent.sections} /> */}
       </main>
 
       <Footer />
